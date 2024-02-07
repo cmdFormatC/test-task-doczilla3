@@ -1,6 +1,8 @@
-.root, .root * {
+.root {
   font-family: 'Inter', 'Arial', sans-serif;
   line-height: 1;
+  min-height: 100vh;
+  color: var(--colorText);
 }
 
 .root, .root * {

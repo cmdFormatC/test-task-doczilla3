@@ -1,0 +1,9 @@
+.meta {
+  display: flex;
+  gap: 5px;
+}
+
+.meta__text {
+  font-size: var(--fontSizeTiny);
+  font-weight: var(--fontWeightRegular);
+}
