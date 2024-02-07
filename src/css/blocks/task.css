@@ -25,39 +25,10 @@
 }
 
 .task__status {
-  display: flex;
-  align-items: center;
-}
-
-.task__check {
-  position: absolute;
-
-  clip: rect(0 0 0 0);
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-.task__check-lable {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   width: 30px;
   height: 30px;
-  border-radius: 2px;
   border: 2px solid var(--doveGray);
-  user-select: none;
-}
-
-.task__check-icon {
-  display: none;
-  width: 18px;
-}
-
-.task__check:checked + .task__check-lable .task__check-icon {
-  display: block;
+  border-radius: 3px;
 }
 
 .task__meta {

@@ -1,0 +1,46 @@
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 18px;
+}
+
+.side-bar__filter-button {
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightRegular);
+  width: 100%;
+  height: 34px;
+  background-color: var(--silver);
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.side-bar__filter-button:nth-child(2) {
+  margin-bottom: 0;
+}
+
+.side-bar__calendar {
+  margin-top: 18px;
+}
+
+.side-bar__filter {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 23px;
+}
+
+.side-bar__filter-status {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--doveGray);
+  border-radius: 2px;
+}
+
+.side-bar__filter-description {
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightRegular);
+}
