@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 9px 13px 0 26px;
+  background-color: var(--colorBackground);
+  width: 70%;
+  min-height: 100%;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__date {
+  font-size: var(--fontSizeTiny);
+  font-weight: var(--fontWeightRegular);
+  letter-spacing: 0.02px;
+}
+
+.main__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+}

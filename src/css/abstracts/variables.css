@@ -5,15 +5,15 @@
   --gallery: #ececec;
   --doveGray: #717171;
   --white: #ffff;
-  --black: #0000;
+  --black: #000000;
 
   --colorText: var(--black);
   --colorHeader: var(--alto);
   --colorBackground: var(--gallery);
   --colorSideMenu: var(--white);
 
-  --fontSizeSmall: 8px;
-  --fontSizeTiny: 10px;
+  --fontSizeSmall: 10px;
+  --fontSizeTiny: 12px;
   --fontSizeMedium: 16px;
   --fontSizeLarge: 18px;
 

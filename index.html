@@ -15,5 +15,39 @@
         <img class="header__profile-icon" src="<%=require('./src/icons/profile.svg')%>" alt="Профиль">
       </a>
     </header>
+    <div class="content">
+      <aside class="side-bar">
+
+      </aside>
+      <main class="main">
+        <div class="main__header">
+          <span class="main__date date">8 мая 2022</span>
+          <div class="main__sort sort">
+            <button class="sort__direction" type="button">
+              <img class="sort__direction-arrow" src="<%=require('./src/icons/sort.svg')%>" alt="Сортировка">
+            </button>
+            <span class="sort__type">Сортировать по дате</span>
+          </div>
+        </div>
+        <ul class="main__tasks">
+          <li class="main__task task">
+            <h3 class="task__title">Название</h3>
+            <div class="task__body">
+              <p class="task__description">Описание</p>
+              <div class="task__status">
+                <input class="task__check" id="task1" type="checkbox">
+                <label class="task__check-lable" for="task1">
+                  <img class="task__check-icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+                </label>
+              </div>
+            </div>
+            <div class="task__meta meta">
+              <span class="meta__text">08.05.2022</span>
+              <span class="meta__text">00:00</span>
+            </div>
+          </li>
+        </ul>
+      </main>
+    </div>
   </body>
 </html>
