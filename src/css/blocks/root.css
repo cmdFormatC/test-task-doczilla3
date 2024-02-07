@@ -1,0 +1,8 @@
+.root, .root * {
+  font-family: 'Inter', 'Arial', sans-serif;
+  line-height: 1;
+}
+
+.root, .root * {
+  box-sizing: border-box;
+}

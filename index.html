@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Список задач</title>
   </head>
-  <body>
+  <body class="root">
     <header class="header">
-      <div class="header__search"></div>
+      <form class="header__search">
+        <input placeholder="Поиск" class="header__input" type="text">
+        <button class="header__submit-button" type="submit"></button>
+      </form>
+      <a class="header__profile" href="#">
+        <img class="header__profile-icon" src="<%=require('./src/icons/profile.svg')%>" alt="Профиль">
+      </a>
     </header>
   </body>
 </html>
