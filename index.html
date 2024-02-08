@@ -19,53 +19,22 @@
       <aside class="side-bar">
         <button class="side-bar__filter-button" type="button">Сегодня</button>
         <button class="side-bar__filter-button" type="button">На неделю</button>
-        <div class="side-bar__calendar calendar">
+        <div data-calendar class="side-bar__calendar calendar">
           <div class="calendar__header">
-            <button class="calendar__month-switcher" type="button">&lt</button>
-            <span class="calendar__month">Май 2022</span>
-            <button class="calendar__month-switcher" type="button">&gt</button>
+            <button data-calendar-switcher-prev class="calendar__month-switcher" type="button">&lt</button>
+            <span data-calendar-month class="calendar__month"></span>
+            <button data-calendar-switcher-next class="calendar__month-switcher" type="button">&gt</button>
           </div>
           <div class="calendar__week">
-            <span class="calendar__week-day">Su</span>
             <span class="calendar__week-day">Mo</span>
             <span class="calendar__week-day">Tu</span>
             <span class="calendar__week-day">We</span>
             <span class="calendar__week-day">Th</span>
             <span class="calendar__week-day">Fr</span>
             <span class="calendar__week-day">Sa</span>
+            <span class="calendar__week-day">Su</span>
           </div>
-          <div class="calendar__days">
-            <span class="calendar__day">1</span>
-            <span class="calendar__day">2</span>
-            <span class="calendar__day">3</span>
-            <span class="calendar__day">4</span>
-            <span class="calendar__day">5</span>
-            <span class="calendar__day">6</span>
-            <span class="calendar__day">7</span>
-            <span class="calendar__day">8</span>
-            <span class="calendar__day">9</span>
-            <span class="calendar__day">10</span>
-            <span class="calendar__day">11</span>
-            <span class="calendar__day">12</span>
-            <span class="calendar__day">13</span>
-            <span class="calendar__day">14</span>
-            <span class="calendar__day">15</span>
-            <span class="calendar__day">16</span>
-            <span class="calendar__day">17</span>
-            <span class="calendar__day">18</span>
-            <span class="calendar__day">19</span>
-            <span class="calendar__day">20</span>
-            <span class="calendar__day">21</span>
-            <span class="calendar__day">22</span>
-            <span class="calendar__day">23</span>
-            <span class="calendar__day">24</span>
-            <span class="calendar__day">25</span>
-            <span class="calendar__day">26</span>
-            <span class="calendar__day">27</span>
-            <span class="calendar__day">28</span>
-            <span class="calendar__day">29</span>
-            <span class="calendar__day">30</span>
-            <span class="calendar__day">31</span>
+          <div data-calendar-days class="calendar__days">
           </div>
         </div>
         <div class="side-bar__filter">

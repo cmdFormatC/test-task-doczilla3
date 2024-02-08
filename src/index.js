@@ -3,6 +3,7 @@ import Task from './components/Task';
 
 import 'normalize.css';
 import './index.css';
+import Calendar from './components/Calendar';
 
 const taskContainer = document.querySelector('[data-tasks]');
 const directionSortButton = document.querySelector('[data-sort-direction]');
@@ -20,6 +21,13 @@ const api = new Api({
   baseUrl: 'https://todo.doczilla.pro',
   'Content-Type': 'application/json'
 });
+
+function handlePeriodSelect(startDate, endDate) {
+  api.getTasksByDate(startDate, endDate)
+  .then(res => console.log(res))
+};
+
+const calendar = new Calendar('[data-calendar]', handlePeriodSelect);
 
 function handleTaskClick() {
   console.log(1)
@@ -79,5 +87,5 @@ directionSortButton.addEventListener('click', () => {
   mountTasks();
 });
 
-
+calendar.initializeCalendar();
 loadTasks();
