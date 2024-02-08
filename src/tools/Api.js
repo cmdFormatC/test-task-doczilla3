@@ -3,7 +3,7 @@ export default class Api {
       this._baseUrl = options.baseUrl;
       this._headers = options.headers;
   }
-
+  
   _checkResponse(res) {
       if (res.ok) {
           return res.json();
@@ -24,8 +24,8 @@ export default class Api {
     })
     .then(this._checkResponse)
   }
-  getTasksByDate(startDate, endDate) {
-    return fetch(`${this._baseUrl}/api/todos/date?from=${startDate}&to=${endDate}`, {
+  getTasksByDate(startDate, endDate, status, limit, offset) {
+    return fetch(`${this._baseUrl}/api/todos/date?from=${startDate}&to=${endDate}&status=${status}&limit=${limit}&offset=${offset}`, {
       headers: this._headers
     })
     .then(this._checkResponse)

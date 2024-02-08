@@ -17,8 +17,8 @@
     </header>
     <div class="content">
       <aside class="side-bar">
-        <button class="side-bar__filter-button" type="button">Сегодня</button>
-        <button class="side-bar__filter-button" type="button">На неделю</button>
+        <button class="side-bar__filter-button" type="button" button-today-tasks>Сегодня</button>
+        <button class="side-bar__filter-button" type="button" button-week-tasks>На неделю</button>
         <div data-calendar class="side-bar__calendar calendar">
           <div class="calendar__header">
             <button data-calendar-switcher-prev class="calendar__month-switcher" type="button">&lt</button>
@@ -39,7 +39,7 @@
         </div>
         <div class="side-bar__filter">
           <div class="side-bar__filter-status checkbox">
-            <input class="checkbox__input" id="filter1" type="checkbox">
+            <input data-unfulfilled-filter class="checkbox__input" id="filter1" type="checkbox">
             <label class="checkbox__lable" for="filter1">
               <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
             </label>

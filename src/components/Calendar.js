@@ -10,7 +10,22 @@ export default class Calendar {
     this._handlePeriodSelect = handlePeriodSelect;
     this._selectedStartDay = null;
     this._selectedEndDay = null;
+    this._selectedStartDate = null;
+    this._selectedEndDate = null;
   }
+
+  getSelectedStartDate() {
+    if (this._selectedStartDate) {
+      return this._selectedStartDate.getTime();
+    };
+  }
+
+  getSelectedEndDate() {
+    if (this._selectedEndDate) {
+      return this._selectedEndDate.getTime();
+    };
+  }
+  
   _getDaysInMonth(year, month) {
     return new Date(year, month + 1, 0).getDate();
   }
