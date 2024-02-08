@@ -88,25 +88,26 @@
             <span class="sort__type">Сортировать по дате</span>
           </div>
         </div>
-        <ul class="main__tasks">
-          <li class="main__task task">
-            <h3 class="task__title">Название</h3>
-            <div class="task__body">
-              <p class="task__description">Описание</p>
-              <div class="task__status checkbox">
-                <input class="checkbox__input" id="task1" type="checkbox">
-                <label class="checkbox__lable" for="task1">
-                  <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
-                </label>
-              </div>
-            </div>
-            <div class="task__meta meta">
-              <span class="meta__text">08.05.2022</span>
-              <span class="meta__text">00:00</span>
-            </div>
-          </li>
+        <ul data-tasks class="main__tasks">
         </ul>
       </main>
     </div>
+    <template data-task-template>
+      <li data-task-container class="main__task task">
+        <h3 data-task-title class="task__title"></h3>
+        <div class="task__body">
+          <p data-task-description class="task__description"></p>
+          <div class="task__status checkbox">
+            <input data-task-checkbox class="checkbox__input" type="checkbox">
+            <label data-task-lable class="checkbox__lable">
+              <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+            </label>
+          </div>
+        </div>
+        <div class="task__meta meta">
+          <span data-task-date class="meta__text"></span>
+        </div>
+      </li>
+    </template>
   </body>
 </html>

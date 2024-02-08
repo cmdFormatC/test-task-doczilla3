@@ -6,6 +6,7 @@
   background-color: var(--colorBackground);
   width: 70%;
   min-height: 100%;
+  
 }
 
 .main__header {
@@ -26,4 +27,6 @@
   margin: 0;
   list-style-type: none;
   padding: 0;
+  overflow-y: scroll;
+  max-height: 100%;
 }
