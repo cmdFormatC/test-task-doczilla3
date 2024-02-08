@@ -8,8 +8,8 @@
   <body class="root">
     <header class="header">
       <form class="header__search">
-        <input placeholder="Поиск" class="header__input" type="text">
-        <button class="header__submit-button" type="submit"></button>
+        <input placeholder="Поиск" class="header__input" type="text" data-search-input>
+        <button class="header__submit-button" type="submit" data-search-submit-button></button>
       </form>
       <a class="header__profile" href="#">
         <img class="header__profile-icon" src="<%=require('./src/icons/profile.svg')%>" alt="Профиль">
@@ -17,8 +17,8 @@
     </header>
     <div class="content">
       <aside class="side-bar">
-        <button class="side-bar__filter-button" type="button" button-today-tasks>Сегодня</button>
-        <button class="side-bar__filter-button" type="button" button-week-tasks>На неделю</button>
+        <button class="side-bar__filter-button" type="button" data-button-today-tasks>Сегодня</button>
+        <button class="side-bar__filter-button" type="button" data-button-week-tasks>На неделю</button>
         <div data-calendar class="side-bar__calendar calendar">
           <div class="calendar__header">
             <button data-calendar-switcher-prev class="calendar__month-switcher" type="button">&lt</button>

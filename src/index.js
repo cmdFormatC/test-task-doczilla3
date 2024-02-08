@@ -12,8 +12,10 @@ class TodoApp {
     this.directionSortButton = document.querySelector('[data-sort-direction]');
     this.directionSortIcon = document.querySelector('[data-sort-icon]');
     this.unfulfilledCheckBox = document.querySelector('[data-unfulfilled-filter]');
-    this.todayTasksButton = document.querySelector('[button-today-tasks]');
-    this.weekTasksButton = document.querySelector('[button-week-tasks]');
+    this.todayTasksButton = document.querySelector('[data-button-today-tasks]');
+    this.weekTasksButton = document.querySelector('[data-button-week-tasks]');
+    this.searchInput = document.querySelector('[data-search-input]');
+    this.searchSubmitButton = document.querySelector('[data-search-submit-button]');
     this.appState = {
       isSortIncreasing: false,
       limit: 10,
@@ -21,6 +23,8 @@ class TodoApp {
       isLoading: false,
       tasks: [],
       isOnlyUnfulfilled: false,
+      searchText: '',
+      isLoadingComplete: false,
     };
 
     this.api = new Api({
@@ -47,18 +51,18 @@ class TodoApp {
     this.unfulfilledCheckBox.addEventListener('change', this.handleUnfulfilledChange.bind(this));
     this.todayTasksButton.addEventListener('click', this.handleTodayTasksClick.bind(this));
     this.weekTasksButton.addEventListener('click', this.handleWeekTasksClick.bind(this));
+    this.searchSubmitButton.addEventListener('click',(e) => this.handleSearchTasks(e));
+  }
+
+  clearTasksState() {
+    this.appState.isLoadingComplete = false
+    this.appState.tasks = [];
+    this.appState.offset = 0;
   }
 
   handlePeriodSelect(startDate, endDate) {
-    this.appState.tasks = [];
-    this.unMountTasks();
-    this.appState.limit = 10;
-    this.appState.offset = 0;
-    this.api.getTasksByDate(startDate, endDate, this.appState.isOnlyUnfulfilled, this.appState.limit, this.appState.offset)
-      .then(res => {
-        this.appState.tasks.push(...res);
-        this.mountTasks();
-      });
+    this.clearTasksState()
+    this.loadTasks(startDate, endDate, null)
   }
 
   handleSortClick() {
@@ -71,7 +75,6 @@ class TodoApp {
 
   handleUnfulfilledChange() {
     this.appState.isOnlyUnfulfilled = this.unfulfilledCheckBox.checked;
-    console.log(this.appState.isOnlyUnfulfilled);
   }
 
   handleTodayTasksClick() {
@@ -91,22 +94,42 @@ class TodoApp {
     endOfWeek.setHours(23, 59, 59, 999);
     this.handlePeriodSelect(startOfWeek.getTime(), endOfWeek.getTime());
   }
+  
+  handleSearchTasks(e) {
+    e.preventDefault();
+    this.clearTasksState()
+    this.searchText = this.searchInput.value;
+    throttleDebounce(() => {
+      this.loadTasks(null, null, this.searchText);
+    }, 500)();
+  }
 
-  async loadTasks(startDate, endDate) {
+  async loadTasks(startDate, endDate, searchText) {
     const onSuccess = (result) => {
+      if (result.length === 0) {
+        this.appState.isLoadingComplete = true;
+      }
       this.appState.tasks.push(...result);
       this.sortTasks();
       this.unMountTasks();
       this.mountTasks();
       this.appState.offset += this.appState.limit;
     };
+    
+    if (this.appState.isLoadingComplete) {
+      return;
+    }
 
     if (!!startDate && !!endDate) {
       this.api.getTasksByDate(startDate, endDate, this.appState.isOnlyUnfulfilled, this.appState.limit, this.appState.offset)
         .then(onSuccess)
-    } else {
+    } else if (!!searchText) {
+      this.api.getTasksBySearch(this.searchText, this.appState.limit, this.appState.offset)
+      .then(onSuccess)
+    }
+    else {
       this.api.getTasks(this.appState.limit, this.appState.offset)
-        .then(onSuccess)
+      .then(onSuccess)
     }
   }
 
@@ -137,16 +160,12 @@ class TodoApp {
   observeLastTask() {
     const observerCallback = (entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !this.appState.isLoadingComplete) {
           const currentSelectedStartDate = this.calendar.getSelectedStartDate();
           const currentSelectedEndDate = this.calendar.getSelectedEndDate();
-          if (!!currentSelectedStartDate && !!currentSelectedEndDate) {
-            throttleDebounce(() => {
-              this.loadTasks(currentSelectedStartDate, currentSelectedEndDate);
-            }, 500)();
-          } else {
-            throttleDebounce(this.loadTasks.bind(this), 500)();
-          }
+          throttleDebounce(() => {
+            this.loadTasks(currentSelectedStartDate, currentSelectedEndDate, this.searchText);
+          }, 500)();
 
           observer.unobserve(entry.target);
         }
