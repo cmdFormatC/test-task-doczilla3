@@ -42,10 +42,12 @@
 .calendar__days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 28px);
   row-gap: 5px;
   column-gap: 4px;
   margin-top: 5px;
   text-align: right;
+  max-height: 198px;
 }
 
 .calendar__day {
@@ -54,4 +56,15 @@
   background-color: var(--gallery);
   border-radius: 2px;
   border: 1px solid var(--doveGray);
+  max-height: 28px;
+  cursor: pointer;
+}
+
+.calendar__day_not-revitalized {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.calendar__day_selected {
+  background-color: var(--white);
 }
