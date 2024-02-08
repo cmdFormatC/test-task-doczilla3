@@ -2,18 +2,20 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.sort__direction {
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 15px;
   padding: 0;
 }
 
 .sort__direction-arrow {
   width: 100%;
+  width: 15px;
+  transition: 0.1s;
+}
+
+.sort__direction-arrow_reverse {
+  transform: rotate(180deg) scaleX(-1);
 }
 
 .sort__type {

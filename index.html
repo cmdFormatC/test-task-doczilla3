@@ -81,12 +81,10 @@
       <main class="main">
         <div class="main__header">
           <span class="main__date date">8 мая 2022</span>
-          <div class="main__sort sort">
-            <button class="sort__direction" type="button">
-              <img class="sort__direction-arrow" src="<%=require('./src/icons/sort.svg')%>" alt="Сортировка">
-            </button>
+          <button data-sort-direction class="main__sort sort" type="button">
+            <img data-sort-icon class="sort__direction-arrow" src="<%=require('./src/icons/sort.svg')%>" alt="Сортировка">
             <span class="sort__type">Сортировать по дате</span>
-          </div>
+          </button>
         </div>
         <ul data-tasks class="main__tasks">
         </ul>
