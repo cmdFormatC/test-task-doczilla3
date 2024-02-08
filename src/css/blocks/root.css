@@ -2,9 +2,11 @@
   font-family: 'Inter', 'Arial', sans-serif;
   line-height: 1;
   min-height: 100vh;
+  max-height: 100vh;
   color: var(--colorText);
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 .root, .root * {

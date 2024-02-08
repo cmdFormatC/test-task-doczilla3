@@ -4,6 +4,11 @@
   padding: 8px 10px;
   background-color: var(--silverChalice);
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.task:last-child {
+  margin-bottom: 30px;
 }
 
 .task__title {
@@ -22,6 +27,10 @@
   font-size: var(--fontSizeLarge);
   font-weight: var(--fontWeightRegular);
   margin: 0;
+  max-width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .task__status {
