@@ -18,8 +18,8 @@ export default class Api {
     .then(this._checkResponse)
   }
 
-  getTasksBySearch(param) {
-    return fetch(`${this._baseUrl}/api/todos/find?q=${param}`, {
+  getTasksBySearch(param, limit, offset) {
+    return fetch(`${this._baseUrl}/api/todos/find?q=${param}&limit=${limit}&offset=${offset}`, {
       headers: this._headers
     })
     .then(this._checkResponse)
