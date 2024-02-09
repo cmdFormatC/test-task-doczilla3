@@ -6,6 +6,7 @@
   --doveGray: #717171;
   --white: #ffff;
   --black: #000000;
+  --mercury: #e8e8e8;
 
   --colorText: var(--black);
   --colorHeader: var(--alto);
@@ -16,6 +17,7 @@
   --fontSizeTiny: 12px;
   --fontSizeMedium: 16px;
   --fontSizeLarge: 18px;
+  --fontSizeHuge: 24px;
 
   --fontWeightRegular: 400;
   --fontWeightMedium: 500;

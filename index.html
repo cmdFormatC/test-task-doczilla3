@@ -76,5 +76,25 @@
         </div>
       </li>
     </template>
+    <aside data-popup class="popup">
+      <div class="popup__container">
+        <div class="popup__header">
+          <div class="popup__meta">
+            <h2 data-popup-title class="popup__title"></h2>
+            <span data-popup-date class="popup__date"></span>
+          </div>
+          <div class="popup__checkbox checkbox">
+            <input data-popup-checkbox class="checkbox__input" id="popupStatus" type="checkbox">
+            <label for="popupStatus" class="checkbox__lable">
+              <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+            </label>
+          </div>
+        </div>
+        <div class="popup__content">
+          <p data-popup-desc class="popup__desc"></p>
+        </div>
+        <button data-popup-confirm class="popup__button" type="button">Готово</button>
+      </div>
+    </aside>
   </body>
 </html>
