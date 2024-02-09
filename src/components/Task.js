@@ -45,7 +45,7 @@ export default class Task {
     })
     this._taskContainer.addEventListener('click', (e) => {
       if (e.target !== this._taskCheckbox) {
-        this._handleTaskClick();
+        this._handleTaskClick(this._itemName, this._itemDate, this._itemFullDesc, this._itemStatus);
       }
     })
   }

@@ -5,6 +5,7 @@ import { throttleDebounce } from './utils'
 
 import 'normalize.css';
 import './index.css';
+import Popup from './components/Popup';
 
 class TodoApp {
   constructor() {
@@ -37,6 +38,7 @@ class TodoApp {
       lastStartDate: null,
       lastEndDate: null,
     };
+    this.popup = new Popup('[data-popup]');
   }
 
   async init() {
@@ -133,8 +135,12 @@ class TodoApp {
     }
   }
 
+  openPopup
+
   createTask(item) {
-    const task = new Task(item, '[data-task-template]', () => console.log(1), (isCheked) => console.log(isCheked));
+    const task = new Task(item, '[data-task-template]', 
+    (title, date, desc, status) => this.popup.open(title, date, desc, status), 
+    (isCheked) => console.log(isCheked));
     this.taskContainer.append(task.generateTask())
   }
 
