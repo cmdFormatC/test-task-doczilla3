@@ -1,0 +1,6 @@
+.content {
+  display: flex;
+  flex: 1;
+  padding: 0 10vw;
+  max-height: 94vh;
+}

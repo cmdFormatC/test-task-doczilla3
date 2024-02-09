@@ -1,0 +1,16 @@
+@import url(./css/abstracts/variables.css);
+
+@import url(./css/base/fonts.css);
+
+@import url(./css/blocks/root.css);
+
+@import url(./css/blocks/header.css);
+@import url(./css/blocks/content.css);
+@import url(./css/blocks/main.css);
+@import url(./css/blocks/sort.css);
+@import url(./css/blocks/task.css);
+@import url(./css/blocks/meta.css);
+@import url(./css/blocks/side-bar.css);
+@import url(./css/blocks/calendar.css);
+@import url(./css/blocks/checkbox.css);
+@import url(./css/blocks/popup.css);

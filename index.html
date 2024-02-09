@@ -5,9 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Список задач</title>
   </head>
-  <body>
+  <body class="root">
     <header class="header">
-      <div class="header__search"></div>
+      <form class="header__search">
+        <input placeholder="Поиск" class="header__input" type="text" data-search-input>
+        <button class="header__submit-button" type="submit" data-search-submit-button></button>
+      </form>
+      <a class="header__profile" href="#">
+        <img class="header__profile-icon" src="<%=require('./src/icons/profile.svg')%>" alt="Профиль">
+      </a>
     </header>
+    <div class="content">
+      <aside class="side-bar">
+        <button class="side-bar__filter-button" type="button" data-button-today-tasks>Сегодня</button>
+        <button class="side-bar__filter-button" type="button" data-button-week-tasks>На неделю</button>
+        <div data-calendar class="side-bar__calendar calendar">
+          <div class="calendar__header">
+            <button data-calendar-switcher-prev class="calendar__month-switcher" type="button">&lt</button>
+            <span data-calendar-month class="calendar__month"></span>
+            <button data-calendar-switcher-next class="calendar__month-switcher" type="button">&gt</button>
+          </div>
+          <div class="calendar__week">
+            <span class="calendar__week-day">Mo</span>
+            <span class="calendar__week-day">Tu</span>
+            <span class="calendar__week-day">We</span>
+            <span class="calendar__week-day">Th</span>
+            <span class="calendar__week-day">Fr</span>
+            <span class="calendar__week-day">Sa</span>
+            <span class="calendar__week-day">Su</span>
+          </div>
+          <div data-calendar-days class="calendar__days">
+          </div>
+        </div>
+        <div class="side-bar__filter">
+          <div class="side-bar__filter-status checkbox">
+            <input data-unfulfilled-filter class="checkbox__input" id="filter1" type="checkbox">
+            <label class="checkbox__lable" for="filter1">
+              <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+            </label>
+          </div>
+          <span class="side-bar__filter-description">Только невыполненные</span>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="main__header">
+          <span class="main__date date">8 мая 2022</span>
+          <button data-sort-direction class="main__sort sort" type="button">
+            <img data-sort-icon class="sort__direction-arrow" src="<%=require('./src/icons/sort.svg')%>" alt="Сортировка">
+            <span class="sort__type">Сортировать по дате</span>
+          </button>
+        </div>
+        <ul data-tasks class="main__tasks">
+        </ul>
+      </main>
+    </div>
+    <template data-task-template>
+      <li data-task-container class="main__task task">
+        <h3 data-task-title class="task__title"></h3>
+        <div class="task__body">
+          <p data-task-description class="task__description"></p>
+          <div class="task__status checkbox">
+            <input data-task-checkbox class="checkbox__input" type="checkbox">
+            <label data-task-lable class="checkbox__lable">
+              <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+            </label>
+          </div>
+        </div>
+        <div class="task__meta meta">
+          <span data-task-date class="meta__text"></span>
+        </div>
+      </li>
+    </template>
+    <aside data-popup class="popup">
+      <div class="popup__container">
+        <div class="popup__header">
+          <div class="popup__meta">
+            <h2 data-popup-title class="popup__title"></h2>
+            <span data-popup-date class="popup__date"></span>
+          </div>
+          <div class="popup__checkbox checkbox">
+            <input data-popup-checkbox class="checkbox__input" id="popupStatus" type="checkbox">
+            <label for="popupStatus" class="checkbox__lable">
+              <img class="checkbox__icon" src="<%=require('./src/icons/check.svg')%>" alt="Галочка">
+            </label>
+          </div>
+        </div>
+        <div class="popup__content">
+          <p data-popup-desc class="popup__desc"></p>
+        </div>
+        <button data-popup-confirm class="popup__button" type="button">Готово</button>
+      </div>
+    </aside>
   </body>
 </html>

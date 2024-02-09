@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 10px 10vw;
+  width: 100%;
+  background-color: var(--colorHeader);
+}
+
+.header__search {
+  position: relative;
+  width: 250px;
+}
+
+.header__input {
+  color: var(--white);
+  font-size: var(--fontSizeMedium);
+  font-weight: var( --fontWeightRegular);
+
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px 5px 40px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: var(--silverChalice);
+}
+
+.header__input:focus {
+  outline: none;
+}
+
+.header__input::placeholder {
+  color: var(--white);
+  font-size: var(--fontSizeMedium);
+  font-weight: var( --fontWeightRegular);
+}
+
+.header__submit-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../../icons/search.svg');
+}

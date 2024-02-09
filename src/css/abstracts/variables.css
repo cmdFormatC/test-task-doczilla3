@@ -1,0 +1,25 @@
+:root {
+  --alto: #d1d0d0;
+  --silverChalice: #a9a9a9;
+  --silver: #c4c4c4;
+  --gallery: #ececec;
+  --doveGray: #717171;
+  --white: #ffff;
+  --black: #000000;
+  --mercury: #e8e8e8;
+
+  --colorText: var(--black);
+  --colorHeader: var(--alto);
+  --colorBackground: var(--gallery);
+  --colorSideMenu: var(--white);
+
+  --fontSizeSmall: 10px;
+  --fontSizeTiny: 12px;
+  --fontSizeMedium: 16px;
+  --fontSizeLarge: 18px;
+  --fontSizeHuge: 24px;
+
+  --fontWeightRegular: 400;
+  --fontWeightMedium: 500;
+  --fontWeightBold: 700;
+}

@@ -1,0 +1,24 @@
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sort__direction-arrow {
+  width: 100%;
+  width: 15px;
+  transition: 0.1s;
+}
+
+.sort__direction-arrow_reverse {
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.sort__type {
+  font-size: var(--fontSizeTiny);
+  font-weight: var(--fontWeightRegular);
+}
