@@ -29,7 +29,7 @@ class TodoApp {
     };
 
     this.api = new Api({
-      baseUrl: 'https://todo.doczilla.pro',
+      baseUrl: 'http://localhost:3000/',
       'Content-Type': 'application/json'
     });
 
@@ -134,8 +134,6 @@ class TodoApp {
       .then(onSuccess)
     }
   }
-
-  openPopup
 
   createTask(item) {
     const task = new Task(item, '[data-task-template]', 
